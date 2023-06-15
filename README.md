@@ -1,1 +1,1 @@
-﻿# 💲 currency rate application
+﻿# 💲 currency rate application 💲
