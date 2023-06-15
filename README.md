@@ -39,3 +39,24 @@ The "Currency Rate Application" offers significant business value by providing t
 •"repositories" directory: Holds the repositories that provide data access and interact with the database.
 
 •"services" directory: Includes services responsible for executing the business logic and interacting with repositories.
+# Technologies
+1.Spring boot
+
+2.Postgres
+
+3.Spring MVC
+
+4.Java 17
+
+5.Spring Data JPA
+
+6.Gradle
+
+7.RESTfull 
+
+8.CRUD
+
+9.Swagger
+
+10.Cron Job
+
