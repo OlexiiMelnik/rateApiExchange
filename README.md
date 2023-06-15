@@ -23,3 +23,19 @@ The "Currency Rate Application" offers significant business value by providing t
 5.**Streamlined Operations**: The Currency Rate Application simplifies the process of obtaining and managing exchange rate information. By centralizing the data from multiple APIs and offering a user-friendly interface, the application saves time and effort for businesses, allowing them to focus on core operations.
 
 6.**Competitive Advantage**: Access to accurate and timely exchange rate data gives businesses a competitive edge in the global market. It enables them to optimize pricing strategies, negotiate favorable terms with international partners, and stay ahead of market trends, enhancing overall competitiveness.
+# Project structure
+1.**Presentation Layer**:
+
+•"controllers" directory: Contains the controllers that handle HTTP requests and process them.
+
+•"dtos" directory: Holds the data transfer objects (DTOs) used for data exchange between the client and server.
+
+•"mappers" directory: Contains mapper classes responsible for transforming objects between different representations.
+
+2.**Business Logic Layer**:
+
+•"models" directory: Contains domain model objects representing the main entities of your application.
+
+•"repositories" directory: Holds the repositories that provide data access and interact with the database.
+
+•"services" directory: Includes services responsible for executing the business logic and interacting with repositories.
