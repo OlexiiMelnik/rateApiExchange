@@ -38,9 +38,21 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-checkstyle {
-	toolVersion = '8.44' // Specify the Checkstyle version
-	configFile = file('checkstyle.xml') // Specify the location of the Checkstyle configuration file
+task checkstyle(type: Checkstyle) {
+	configFile file('checkstyle.xml')
+	ignoreFailures = false
+	showViolations = true
+	source 'src'
+	include '**/*.java'
+	exclude '**/gen/**'
+}
+
+tasks.named('checkstyleMain').configure {
+	dependsOn checkstyle
+}
+
+tasks.named('checkstyleTest').configure {
+	dependsOn checkstyle
 }
 
 tasks.named('test') {
