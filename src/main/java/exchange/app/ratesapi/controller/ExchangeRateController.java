@@ -95,15 +95,4 @@ public class ExchangeRateController {
         log.info("method delete was worked at: " + LocalDateTime.now());
         rateService.delete(id);
     }
-
-    @Operation(summary = "delete exchanges by period")
-    @DeleteMapping("/{from}/{to}")
-    public void deleteExchangeRateByLocalDateBetween(
-            @PathVariable("from") String from,
-            @PathVariable("to") String to) {
-        log.info("method deleteExchangeRateByLocalDateBetween was worked at: "
-                + LocalDateTime.now());
-        rateService.deleteExchangeRateByLocalDateBetween(from, to);
-    }
-
 }

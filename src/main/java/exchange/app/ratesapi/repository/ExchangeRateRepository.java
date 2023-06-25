@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ExchangeRateRepository extends JpaRepository<ExchangeRate, Long> {
     List<ExchangeRate> findAllByLocalDateBetween(String dateFrom, String dateTo);
-
-    void deleteExchangeRateByLocalDateBetween(String dateFrom, String dateTo);
 }

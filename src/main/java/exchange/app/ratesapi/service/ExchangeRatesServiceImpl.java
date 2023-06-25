@@ -31,10 +31,4 @@ public class ExchangeRatesServiceImpl implements ExchangeRateService {
     public void delete(Long id) {
         exchangeRateRepository.deleteById(id);
     }
-
-    @Override
-    public void deleteExchangeRateByLocalDateBetween(String dateFrom, String dateTo) {
-        exchangeRateRepository.deleteExchangeRateByLocalDateBetween(dateFrom, dateTo);
-    }
-
 }

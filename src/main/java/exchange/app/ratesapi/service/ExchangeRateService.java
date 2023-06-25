@@ -12,6 +12,4 @@ public interface ExchangeRateService {
     List<ExchangeRate> findAllByLocalDateBetween(String dateFrom, String dateTo);
 
     void delete(Long id);
-
-    void deleteExchangeRateByLocalDateBetween(String dateFrom, String dateTo);
 }
