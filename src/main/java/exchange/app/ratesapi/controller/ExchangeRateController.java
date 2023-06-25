@@ -18,12 +18,7 @@ import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/exchangeRates")
@@ -74,10 +69,10 @@ public class ExchangeRateController {
     }
 
     @Operation(summary = "Get exchange rates by date range")
-    @GetMapping("/byDateRange/{from}/{to}")
+    @GetMapping("/byDateRange")
     public List<ExchangeRateResponseDto> findAllByLocalDateBetween(
-            @PathVariable("from") String from,
-            @PathVariable("to") String to) {
+            @RequestParam String from,
+            @RequestParam String to) {
         log.info("method findAllByLocalDateBetween was worked at: " + LocalDateTime.now());
         return rateService.findAllByLocalDateBetween(from, to)
                 .stream()
@@ -86,7 +81,7 @@ public class ExchangeRateController {
     }
 
     @Operation(summary = "Inject data to DB")
-    @PostMapping("/addAllExchaange")
+    @GetMapping("/addAllExchaange")
     public String inject() {
         monoService.syncExternalCharacters();
         privatService.syncExternalCharacters();
